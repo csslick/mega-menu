@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>메가 GNB</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		header {
+			position: relative;
+			width: 1200px;
+			margin: 0 auto;
+			background: #ccc;
+			height: 100px;
+		}
+
+		header>h1 {
+			position: absolute;
+			left: 20px;
+			top: 20px;
+		}
+
+		nav#gnb {
+			position: absolute;
+			right: 0;
+			height: 100%;
+			margin-left: 150px;
+			outline: 2px solid blue;
+		}
+
+		/*  1depth  */
+		.depth1 {
+			height: 100%;
+		}
+
+		/* 1depth에 부모 위치 지정 */
+		.depth1>li {
+			position: relative;
+			display: inline-block;
+			height: 100%;
+			outline: 1px solid red;
+		}
+
+		/* 메뉴 버튼 위치 지정 */
+		.depth1>li>a {
+			display: block;
+			/* padding: 40px; */
+			padding: 0 40px;
+			line-height: 100px;
+			outline: 1px solid green;
+		}
+
+		/* 2depth 영역 위치 정의 */
+		.depth2 {
+			background: #ff0;
+			position: fixed; /* 위치 고정 */
+			left: 0;
+			width: 100%;
+			display: none;
+			z-index: -1;
+		}
+
+		/* 내부에서 1200px 위치 정렬 */
+		.depth2 > .inner {
+			width: 1200px;
+			margin: 0 auto;
+			outline: 0 red;
+		}
+
+		/* 2depth hover */
+		.depth1 > li:hover > .depth2{
+			display: block;
+			z-index: 99;
+		}
+
+		/* 2depth 세부 디자인 */
+		.depth2 .inner > *{
+			display: inline-block;
+			vertical-align: top;
+			padding: 20px 20px 20px 0;
+		}
+		.depth2 > .inner { display: flex;}
+		
+		.depth2 ul{ 
+			text-align: center; 
+			background: #cedeef;
+		}
+		.depth2 ul > li{
+			 display: inline-block;
+			 padding: 0 20px;
+		}
+
+
+
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>logo</h1>
+		<nav id="gnb">
+			<ul class="depth1">
+				<li><a href="#">기업</a>
+					<div class="depth2">
+						<div class="inner">
+							<p>여기는 서브메뉴 설명글1</p>
+							<ul>
+								<li><a href="#">sub1-1</a></li>
+								<li><a href="#">sub1-2</a></li>
+								<li><a href="#">sub1-3</a></li>
+								<li><a href="#">sub1-4</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">제품</a>
+					<div class="depth2">
+						<div class="inner">
+							<p>여기는 서브메뉴 설명글2</p>
+							<ul>
+								<li><a href="#">sub2-1</a></li>
+								<li><a href="#">sub2-2</a></li>
+								<li><a href="#">sub2-3</a></li>
+								<li><a href="#">sub2-4</a></li>
+								<li><a href="#">sub2-5</a></li>
+								<li><a href="#">sub2-6</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">투자</a>
+					<div class="depth2">
+						<div class="inner">
+							<p>여기는 서브메뉴 설명글3</p>
+							<ul>
+								<li><a href="#">sub3-1</a></li>
+								<li><a href="#">sub3-2</a></li>
+
+							</ul>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</nav>
+	</header>
+
+
+</body>
+
+</html>
